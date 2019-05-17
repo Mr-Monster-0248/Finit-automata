@@ -19,13 +19,6 @@ def minimization(fa:Automata):
         temp = []
         while (temp != groupeList):
             tempGroupe = []
-            for groupe in groupeList:
-                for state in groupe:
-                    tempGroupe.append([])
-                    cpt = 0
-                    for letter in fa.symboles:
-                        tempGroupe[cpt].append(fa.states[state][letter])
-                        cpt += 1
             print(tempGroupe)
             temp = groupeList
 

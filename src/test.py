@@ -2,10 +2,10 @@ from Automata import Automata as Automata
 from minimization import *
 # from plantuml import *
 
-test = Automata("fa08.txt")
+test = Automata("fa13.txt")
 print(test)
 
-minimization(test)
+test.toFile()
 
 # Convert to an UML pic
 # p = PlantUML()

@@ -30,6 +30,17 @@ def is_complete(fa:Automata):
             return False
     return True
 
+def is_standard(fa:Automata):
+    # if len(fa.initialStates) is not 1:
+    #     return False
+    # else:
+    #     for letter in fa.symboles:
+
+    #         if fa.states[fa.initialStates[0]][letter] is fa.initialStates:
+    #             return False
+    #     return True
+    pass
+
 def read_word(fa:Automata, word:str, state=-1):
     for letter in word:
         if letter not in fa.symboles:

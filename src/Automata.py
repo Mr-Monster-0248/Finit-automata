@@ -130,6 +130,24 @@ class Automata:
                 "\nAlphabet: " + str(self.symboles) +
                 "\nInitial states: " + str(self.initialStates) +
                 "\nFinal states: " + str(self.finalStates))
+
+    def toFile(self, output="../output.txt"):
+        with open(output, "w") as f:
+            f.write(str(len(self.symboles)) + "\n")
+            f.write(str(len(self.states)) + "\n")
+            f.write(str(len(self.initialStates)) + " ")
+            for state in self.initialStates:
+                f.write(str(state) + " ")
+            f.write("\n")
+            f.write(str(len(self.finalStates)) + " ")
+            for state in self.finalStates:
+                f.write(str(state) + " ")
+            f.write("\n")
+            f.write(str(len(self.states)) + "\n")
+            for state in self.states:
+                for char in self.states[state]:
+                    for sta in self.states[state][char]:
+                        f.write(str(state) + str(char) + str(sta) + "\n")
     
     def toUML(self, output="output.txt"):
         # TODO
