@@ -73,7 +73,7 @@ class Automata:
         # Show the file contents line by line.
         # We added the comma to print single newlines and not double newlines.
         # This is because the lines contain the newline character '\n'.
-        if len(content) <= 6:
+        if len(content) < 6:
             content = None
             raise Exception("Abort ! File is too small.")
 
