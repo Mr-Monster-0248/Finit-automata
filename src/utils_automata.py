@@ -22,7 +22,13 @@ def is_deterministic(fa:Automata):
         return True
 
 def is_complete(fa:Automata):
-    pass
+    for state in fa.states:
+        c = 0
+        for char in fa.states[state]:
+            c += 1
+        if c != len(fa.symboles):
+            return False
+    return True
 
 def read_word(fa:Automata, word:str, state=-1):
     for letter in word:

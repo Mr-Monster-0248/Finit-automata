@@ -8,6 +8,10 @@ while loop:
 
     fa = Automata(filename)
 
+    print("Is asycronous: " + str(is_asynchronous(fa)))
+    print("Is deterministic: " + str(is_deterministic(fa)))
+    print("Is Complete: " + str(is_complete(fa)))
+
     print("testing a word")
     word = input("test word: ")
 
