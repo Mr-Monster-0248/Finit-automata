@@ -60,4 +60,4 @@ def read_word(fa:Automata, word:str, state=-1):
                     if not read_word(fa, word[1:], newstate):
                         continue
                     else:
-                        return True
+                        return read_word(fa, word[1:], newstate)
