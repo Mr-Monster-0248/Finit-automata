@@ -22,19 +22,34 @@ class Automata:
             
             self.set_symboles(content[0])
             self.add_number_state(content[1])
-            self.add_initial(initial)
-            self.add_final(final)
+            self.add_initials(initial)
+            self.add_finals(final)
             self.add_transitions(transition)
 
     def set_symboles(self, size: int):
         for i in range(size):
             self.symboles.append(string.ascii_lowercase[i])
 
-    def add_final(self, final_list: list):
+    def add_finals(self, final_list: list):
         for state in final_list:
-            self.finalStates.append(int(state))
+            self.add_final(int(state))
+    
+    def add_final(self, finalState: int):
+        if finalState not in self.finalStates:
+            if finalState in self.states:
+                self.finalStates.append(int(finalState))
+            else:
+                print(finalState + "state not in States of the FA")
+        else:
+            print(str(finalState) + "state already final")
 
-    def add_initial(self, initial_list: list):
+    def remove_final(self, finalRemove):
+        if finalRemove in self.finalStates:
+            self.finalStates.remove(finalRemove)
+        else:
+            print(finalRemove + " not in final states")
+
+    def add_initials(self, initial_list: list):
         for state in initial_list:
             self.initialStates.append(int(state))
 

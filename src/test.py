@@ -1,8 +1,16 @@
-from Automata import *
+from Automata import Automata as Automata
+from utils_automata import *
 # from plantuml import *
 
-test = Automata("fa10.txt")
+test = Automata("fa08.txt")
 print(test)
+
+print("Is asycronous: " + str(is_asynchronous(test)))
+print("Is deterministic: " + str(is_deterministic(test)))
+
+word = input("test word: ")
+
+print(read_word(test, word))
 
 # Convert to an UML pic
 # p = PlantUML()
