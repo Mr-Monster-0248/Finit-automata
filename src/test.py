@@ -1,9 +1,7 @@
-from Automaton import *
-from plantuml import *
+from Automata import *
+# from plantuml import *
 
-test = Automaton("inputTest.txt")
-print(test)
-test.removeState(8)
+test = Automata("fa10.txt")
 print(test)
 
 # Convert to an UML pic
