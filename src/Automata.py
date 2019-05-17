@@ -81,7 +81,7 @@ class Automata:
         return (testFinalState in self.finalStates)
 
     def read_automaton_from_file(self, filename: str):
-        with open("../fa/" + filename) as f:
+        with open("../res/" + filename) as f:
             content = f.readlines()
             content = list(map(lambda s: s.strip(), content))
 
